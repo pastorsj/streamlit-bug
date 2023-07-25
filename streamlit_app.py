@@ -4,12 +4,11 @@ import pandas as pd
 
 
 def main():
-    file_result = st.file_uploader(
+    st.file_uploader(
         "Upload a file",
         type=["xlsx", "xls"],
         key="file",
     )
-    st.write(file_result)
 
     if st.session_state.file is not None:
         if st.button(
