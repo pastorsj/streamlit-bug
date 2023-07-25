@@ -19,9 +19,10 @@ def main():
             start_time = time.time()
             st.progress(0, "Testing...")
             file_df = pd.read_excel(st.session_state.file)
-            for idx, _ in file_df.iterrows():
+            for idx, row in file_df.iterrows():
                 time.sleep(15)
                 end_time = time.time()
+                st.write(row)
                 st.progress(
                     idx / len(file_df),
                     f"Total Time: {round(end_time - start_time)} seconds...",
